@@ -18,6 +18,20 @@ public class Jetons {
     public String getCouleur() {//création d'un getter pour retourner la couleur du jeton
         return couleur;
     }
+
+    @Override
+    public String toString() {
+        if (couleur=="Rouge"){
+            return "R";
+        }else{
+            if(couleur=="Jaune"){
+                return "J";
+            }
+        }
+        return "Jetons{" + '}';
+    }
+    
+    
     
     
     

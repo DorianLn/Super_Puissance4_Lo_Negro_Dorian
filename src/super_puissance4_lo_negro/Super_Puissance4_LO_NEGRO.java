@@ -16,6 +16,11 @@ public class Super_Puissance4_LO_NEGRO {
     public static void main(String[] args) {
         // TODO code application logic here
         
+        Jetons jeton1 = new Jetons("Jaune");//test du code pour voir si il retourne bien ce qui était demandé 
+        System.out.println(jeton1);
+        
+        Jetons jeton2 = new Jetons("Rouge");
+        System.out.println(jeton2);
     }
     
 }
