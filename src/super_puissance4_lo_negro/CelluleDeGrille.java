@@ -28,10 +28,25 @@ public class CelluleDeGrille {
         }
     }
 
-    public void setaffecterJeton(Jetons jetonCourant) { // méthode permettant de ajouter le jeton en paramètre à la cellule
+    public void affecterJeton(Jetons jetonCourant) {     // méthode permettant de ajouter le jeton en paramètre à la cellule
         this.jetonCourant = jetonCourant;
     }
-
+    
+    
+    public String lireCouleurDuJeton(){//methode qui renvoie la couleur de la case ou si elle est vide
+        if (jetonCourant==null){// si le jeton est null alors la case est vide 
+            return "vide";
+        }else{
+            if (jetonCourant.getCouleur() == "Rouge"){// si le jeton rest rouge alors on retourne la couleur de la case 
+                return "rouge";
+            }
+            if (jetonCourant.getCouleur() == "Jaune"){
+                return "jaune";
+                
+            }
+        }
+        
+    }
     
 
     
