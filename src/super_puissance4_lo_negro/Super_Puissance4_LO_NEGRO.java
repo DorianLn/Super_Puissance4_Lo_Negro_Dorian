@@ -15,6 +15,7 @@ public class Super_Puissance4_LO_NEGRO {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
     }
     
 }
