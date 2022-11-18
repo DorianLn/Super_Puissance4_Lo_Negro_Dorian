@@ -37,17 +37,21 @@ public class CelluleDeGrille {
         if (jetonCourant==null){// si le jeton est null alors la case est vide 
             return "vide";
         }else{
-            if (jetonCourant.getCouleur() == "Rouge"){// si le jeton rest rouge alors on retourne la couleur de la case 
-                return "rouge";
-            }
-            if (jetonCourant.getCouleur() == "Jaune"){
-                return "jaune";
-                
-            }
-        }
+            return jetonCourant.getCouleur();
+           
+        } 
+    }
+   
+    
+    public Jetons recupererJeton(){   // Cette méthode est 
+//utilisée soit pour récupérer un jeton en cours de jeu, soit lorsqu’on vide la grille
+//pour recommencer une partie 
+        Jetons temporaire;
+        temporaire = jetonCourant;
+        jetonCourant = null;
+        return temporaire;
         
     }
-    
 
     
 

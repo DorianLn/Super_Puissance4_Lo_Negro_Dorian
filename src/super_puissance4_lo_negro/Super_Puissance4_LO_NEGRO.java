@@ -21,6 +21,8 @@ public class Super_Puissance4_LO_NEGRO {
         
         Jetons jeton2 = new Jetons("Rouge");
         System.out.println(jeton2);
+        
+        jeton2.getCouleur();
     }
     
 }

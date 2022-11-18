@@ -15,6 +15,10 @@ public class Jetons {
         this.couleur=couleur;    
     }
 
+    /**
+     *permet de donner la couleur du jeton 
+     * @return
+     */
     public String getCouleur() {//création d'un getter pour retourner la couleur du jeton
         return couleur;
     }
