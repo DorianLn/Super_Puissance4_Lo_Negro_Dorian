@@ -9,5 +9,17 @@ package super_puissance4_lo_negro;
  * @author doria
  */
 public class Jetons {
+    private String couleur;//création d'une variable couleur 
+
+    public Jetons(String couleur) {// création du constructeur 
+        this.couleur=couleur;    
+    }
+
+    public String getCouleur() {//création d'un getter pour retourner la couleur du jeton
+        return couleur;
+    }
+    
+    
+    
     
 }
