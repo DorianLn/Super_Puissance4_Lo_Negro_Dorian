@@ -20,11 +20,11 @@ public class Jetons {
     }
 
     @Override
-    public String toString() {
-        if (couleur=="Rouge"){
-            return "R";
+    public String toString() {//ùéthode toStriong
+        if (couleur=="Rouge"){//on pose des condition 
+            return "R";//si le joueur rentre la couleur rouge, alors le code retourne "R"
         }else{
-            if(couleur=="Jaune"){
+            if(couleur=="Jaune"){//si le joueur rentre la couleur jaune, alores le code retourne "J"
                 return "J";
             }
         }
