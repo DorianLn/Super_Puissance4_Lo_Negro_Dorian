@@ -23,6 +23,8 @@ public class Super_Puissance4_LO_NEGRO {
         System.out.println(jeton2);
         
         jeton2.getCouleur();
+        
+        
     }
     
 }
