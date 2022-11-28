@@ -95,6 +95,34 @@ public class PlateauDeJeu {
         }
     }   
     
+    public boolean colonneGagnantePourCouleur(String Couleur){
+        int cpt=0;//on pose un compteur egal à 0
+        for(int i=0; i<6; i++){//on effectu une double boucle pour parcourir toutes les colonnes de chaque ligne 
+            for(int j=0; j<5; j++){
+                if(lireCouleurDuJeton(j, i )==Couleur){//si la couleur de la case situé à une i ème colonne et j ème ligne est egale à la couleur  on ajoute 1 au compteur 
+                    cpt +=1;
+                    
+                }
+                if(cpt==4){//si le compteur atteint 4 alors il y a 4 couleur à la suite situé sur la i ème ligne 
+                        break;//on arrete donc les boucles 
+                    }
+                else{
+                    if(lireCouleurDuJeton(j, i )!=Couleur){//si la couleur n'est pas la bonne on remet le cpt à 0
+                        cpt=0;
+                    }
+                }
+            }
+            if(cpt==4){
+                break;
+            }
+            
+        }
+        if(cpt==4){
+            return true;
+        }else{
+            return false;
+        }
+    }
     
  }
     
