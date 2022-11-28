@@ -21,11 +21,42 @@ public class PlateauDeJeu {
     }
 
     
+    public int AjouterJetonDansColonnes(Jetons jeton, int indice){
+        
+        for(int i =5; i>0 ; i++){
+            if(grille[i][indice]==null){
+                grille[i][indice].affecterJeton(jeton);//on ajoute le jeton dans la i ème ligne et la indice colonne 
+                break;       
+            }
+        return i;
+        }
+        return 0;
+        
+        
+            
+    }
+    
+    public boolean grilleRemplie(){// on créer une méthode permettant de renvoyer false si la grille n'est pas pleine ou true si elle est pleine 
+        for (int i=0; i<5 ; i++){
+               for(int j=0 ; i<6 ; i++){
+                  if( grille[i][j]==null){
+                      break;
+                  }
+                  break;
+                   
+                   
+               }
+               return false;
+           }
+        return true;
+    }
+    
+        
+ }
     
     
     
     
     
     
-    
-}
+
