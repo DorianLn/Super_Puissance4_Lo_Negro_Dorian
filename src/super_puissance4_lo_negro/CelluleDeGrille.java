@@ -52,6 +52,48 @@ public class CelluleDeGrille {
         return temporaire;
         
     }
-
+    public void placerTrouNoir(){//on met l'attribue AvoirTrouNoir egal à true 
+        AvoirTrouNoir=true;
+        
+    }
+    
+    public void supprimerTrouNoir(){//on met l'attribu AvoirTrouNoir egal à false pour le supprimer
+        AvoirTrouNoir=false;
+    }
+    
+    public boolean presenceTrouNoir(){ //méthode qui renvoie true si un trou noir est présent dans la cellule et false sinon
+        if(AvoirTrouNoir==true){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
+    public void supprimerJeton(){//méthode permettant de supprimer un jeton si un desintégrateur est utilisé ou si le jeton est un sur un trou noir 
+        jetonCourant=null;
+    }
+    
+    public boolean presenceDesintegrateur(){//méthode qui renvoie true si un tdesintégrateur est présent dans la cellule et false sinon
+        if(avoirDesintegrateur==true){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
+    public void placerDesintegrateur(){//méthode qui place un désintégrateur dans la cellule
+        avoirDesintegrateur=true;
+    }
+    
+    public void supprimerDesintegrateur (){//méthode qui supprime un desintégrateur
+        avoirDesintegrateur=false;
+    }
+    
+    public void activerTrouNoir(){//on active le trou noir on supprime donc le jeton et le noir 
+        supprimerJeton();//on appel la méthode supprimer jeton 
+        supprimerTrouNoir();//on appel la méthode supprimer trou noir
+        
+    }
+    
     
 }
