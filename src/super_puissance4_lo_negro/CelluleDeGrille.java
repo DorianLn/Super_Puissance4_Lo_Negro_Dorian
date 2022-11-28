@@ -94,6 +94,27 @@ public class CelluleDeGrille {
         supprimerTrouNoir();//on appel la méthode supprimer trou noir
         
     }
+
+    @Override
+    public String toString() {
+        if(presenceJeton()==true){
+            return jetonCourant.getCouleur();
+        }
+        if(presenceTrouNoir()==true){
+            return "@";
+        }
+        if (presenceDesintegrateur()==true){
+            return "D";
+            
+        }
+        
+        return ".";
+        
+    }
+        
+        
+    
+    
     
     
 }

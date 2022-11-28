@@ -52,20 +52,50 @@ public class PlateauDeJeu {
     }
     
     
-    public afficherGrilleSurConsole(){
-        for (int i=0; i<5; i++){
-            for(int j=0; j<6 ; j++){
-                System.out.println();
-            }
-        }
+    public void afficherGrilleSurConsole(){//méthode permettant d'afficher la grille
+        grille.toString();
+        
         
     }
     
+    public boolean presenceJeton(int x, int y){//méthode permettant de savoir si il y a la présence d'une jeton dans une case de la grille
+        return grille[x][y].presenceJeton();
+    }
+    
+    public String lireCouleurDuJeton(int x, int y){// méthode qui renvoie la couleur du jeton dans la grille 
+        return grille[x][y].lireCouleurDuJeton();
+    }
+    
+    public boolean ligneGagnantePourCouleur(String Couleur){
+        int cpt=0;//on pose un compteur egal à 0
+        for(int i=0; i<5; i++){//on effectu une double boucle pour parcourir toutes les colonnes de chaque ligne 
+            for(int j=0; j<6; j++){
+                if(lireCouleurDuJeton(i, j )==Couleur){//si la couleur de la case situé à une i ème ligne et j ème colonne est egale à la couleur  on ajoute 1 au compteur 
+                    cpt +=1;
+                    
+                }
+                if(cpt==4){//si le compteur atteint 4 alors il y a 4 couleur à la suite situé sur la i ème ligne 
+                        break;//on arrete donc les boucles 
+                    }
+                else{
+                    if(lireCouleurDuJeton(i, j )!=Couleur){//si la couleur n'est pas la bonne on remet le cpt à 0
+                        cpt=0;
+                    }
+                }
+            }
+            if(cpt==4){
+                break;
+            }
+            
+        }
+        if(cpt==4){
+            return true;
+        }else{
+            return false;
+        }
+    }   
     
     
-    
-    
-        
  }
     
     
