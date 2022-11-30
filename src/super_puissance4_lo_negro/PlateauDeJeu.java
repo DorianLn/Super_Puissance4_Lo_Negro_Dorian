@@ -217,6 +217,23 @@ public class PlateauDeJeu {
         }
     }     
     
+    public void placerTrouNoir(int x, int y){
+        grille[x][y].placerTrouNoir();
+    }
+    
+    public void supprimerTrouNoir(int x, int y){
+        grille[x][y].supprimerTrouNoir();
+    }
+    
+    public void placerDesintegrateur(int x, int y){
+        grille[x][y].placerDesintegrateur();
+    }
+    
+    public void supprimerDesintegrateur(int x, int y){
+        grille[x][y].supprimerDesintegrateur();
+    }
+    
+    
  }
     
     
