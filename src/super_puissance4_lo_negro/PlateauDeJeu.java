@@ -199,45 +199,45 @@ public class PlateauDeJeu {
         }
     }
     
-    public void tasserLigne(int ColonneIndi){
-        for(int i=5; i>0 ;i--){
-            if(grille[i][ColonneIndi]==null){
-                grille[i][ColonneIndi]=grille[i+1][ColonneIndi];
-                grille[i-1][ColonneIndi]=null;
+    public void tasserLigne(int ColonneIndi){//méthode permettant de tasser une ligne lorsqu'un jeton est supprimer
+        for(int i=5; i>0 ;i--){//on parcourt les lignes de la colonne de bas en haut 
+            if(grille[i][ColonneIndi]==null){//si la ligne de la colonne est null
+                grille[i][ColonneIndi]=grille[i-1][ColonneIndi];//alors on invers la ligne du dessus avec la ligne actuelle 
+                grille[i-1][ColonneIndi]=null;//et on met la ligne du dessus à null pour que la condition sur la ligne superieuir s'effectue
                 
             }
         }   
     }
     
     public boolean colonneRemplie(int C){
-        if(grille[0][C]!=null){
+        if(grille[0][C]!=null){//si la derniere colonne n'est pas egal à null alors la colonne est remplie 
             return true;
         }else{
             return false;
         }
     }     
     
-    public void placerTrouNoir(int x, int y){
+    public void placerTrouNoir(int x, int y){ //méthode permettant de placer un trou noir 
         grille[x][y].placerTrouNoir();
     }
     
-    public void supprimerTrouNoir(int x, int y){
+    public void supprimerTrouNoir(int x, int y){//méthode permettant de supprimer un trou noir
         grille[x][y].supprimerTrouNoir();
     }
     
-    public void placerDesintegrateur(int x, int y){
+    public void placerDesintegrateur(int x, int y){//méthode permettant de placer un désintégrateur 
         grille[x][y].placerDesintegrateur();
     }
     
-    public void supprimerDesintegrateur(int x, int y){
+    public void supprimerDesintegrateur(int x, int y){//methode permettant de supprimer un désintégrateurbn
         grille[x][y].supprimerDesintegrateur();
     }
     
-    public void supprimerjeton(int x, int y){
+    public void supprimerjeton(int x, int y){//méthode permettant de supprimer un jeton à une,x ligne et y colonne 
         grille[x][y].supprimerJeton();
     }
     
-    public void recupererJeton(int x, int y){
+    public void recupererJeton(int x, int y){//méthode permettant de récuperer un jeton à la x ligne et y colonne 
         grille[x][y].recupererJeton();
     }
  }
