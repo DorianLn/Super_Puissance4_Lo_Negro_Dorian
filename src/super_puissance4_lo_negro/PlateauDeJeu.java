@@ -269,6 +269,19 @@ public class PlateauDeJeu {
             }
         }
     }
+    
+    public boolean presenceDesintegrateur(int x, int y ){
+        return grille[x][y].presenceDesintegrateur();
+    }
+    
+    public boolean presenceTrouNoir(int x, int y){
+        return grille[x][y].presenceTrouNoir();
+    }
+    
+    public void utiliserDesintegrateur(int x, int y, Joueur joueur){
+        grille[x][y].supprimerDesintegrateur();
+        
+    }
  }
     
     

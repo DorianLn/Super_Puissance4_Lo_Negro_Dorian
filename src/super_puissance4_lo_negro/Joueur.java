@@ -51,4 +51,8 @@ public class Joueur {
     public String getCouleurJ(){//méthode qui permet d'obtenir la couleur du joueur
         return couleur;
     }
+    
+    public int getNombreDesintegrateurs(){
+        return nombreDesintegrateurs;
+    }
 }
