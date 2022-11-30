@@ -209,6 +209,16 @@ public class PlateauDeJeu {
         }   
     }
     
+    
+    public boolean GagnantePourCouleur(String Couleur){
+        if(diagonaleMontanteGagnantePourCouleur( Couleur)==true || diagonaleDesencanteGagnantePourCouleur(Couleur)==true || colonneGagnantePourCouleur( Couleur)==true || ligneGagnantePourCouleur(Couleur)==true  ){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
+    
     public boolean colonneRemplie(int C){
         if(grille[0][C]!=null){//si la derniere colonne n'est pas egal à null alors la colonne est remplie 
             return true;
