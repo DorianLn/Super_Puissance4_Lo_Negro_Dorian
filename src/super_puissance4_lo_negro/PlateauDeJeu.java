@@ -233,7 +233,13 @@ public class PlateauDeJeu {
         grille[x][y].supprimerDesintegrateur();
     }
     
+    public void supprimerjeton(int x, int y){
+        grille[x][y].supprimerJeton();
+    }
     
+    public void recupererJeton(int x, int y){
+        grille[x][y].recupererJeton();
+    }
  }
     
     
