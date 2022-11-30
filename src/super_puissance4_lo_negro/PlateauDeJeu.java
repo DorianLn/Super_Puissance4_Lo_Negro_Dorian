@@ -13,8 +13,8 @@ public class PlateauDeJeu {
 
     public PlateauDeJeu(){ //constructeur pour mettre les cellules du plateau à null
             
-           for (int i=0; i<5 ; i++){
-               for(int j=0 ; i<6 ; i++){
+           for (int i=0; i<6 ; i++){
+               for(int j=0 ; i<7 ; i++){
                    grille [i][j]=null;
                }
            }
@@ -23,7 +23,7 @@ public class PlateauDeJeu {
     
     public int AjouterJetonDansColonnes(Jetons jeton, int indice){
         
-        for(int i =5; i>0 ; i++){
+        for(int i =6; i>0 ; i++){
             if(grille[i][indice]==null){
                 grille[i][indice].affecterJeton(jeton);//on ajoute le jeton dans la i ème ligne et la indice colonne 
                 break;       
@@ -37,8 +37,8 @@ public class PlateauDeJeu {
     }
     
     public boolean grilleRemplie(){// on créer une méthode permettant de renvoyer false si la grille n'est pas pleine ou true si elle est pleine 
-        for (int i=0; i<5 ; i++){
-               for(int j=0 ; i<6 ; i++){
+        for (int i=0; i<6 ; i++){
+               for(int j=0 ; i<7 ; i++){
                   if( grille[i][j]==null){
                       break;
                   }
@@ -66,10 +66,14 @@ public class PlateauDeJeu {
         return grille[x][y].lireCouleurDuJeton();
     }
     
+    
+    //partie pour savoir si quatre jetons sont alignés 
+    
+    
     public boolean ligneGagnantePourCouleur(String Couleur){
         int cpt=0;//on pose un compteur egal à 0
-        for(int i=0; i<5; i++){//on effectu une double boucle pour parcourir toutes les colonnes de chaque ligne 
-            for(int j=0; j<6; j++){
+        for(int i=0; i<6; i++){//on effectu une double boucle pour parcourir toutes les colonnes de chaque ligne 
+            for(int j=0; j<7; j++){
                 if(lireCouleurDuJeton(i, j )==Couleur){//si la couleur de la case situé à une i ème ligne et j ème colonne est egale à la couleur  on ajoute 1 au compteur 
                     cpt +=1;
                     
@@ -97,8 +101,8 @@ public class PlateauDeJeu {
     
     public boolean colonneGagnantePourCouleur(String Couleur){
         int cpt=0;//on pose un compteur egal à 0
-        for(int i=0; i<6; i++){//on effectu une double boucle pour parcourir toutes les colonnes de chaque ligne 
-            for(int j=0; j<5; j++){
+        for(int i=0; i<7; i++){//on effectu une double boucle pour parcourir toutes les colonnes de chaque ligne 
+            for(int j=0; j<6; j++){
                 if(lireCouleurDuJeton(j, i )==Couleur){//si la couleur de la case situé à une i ème colonne et j ème ligne est egale à la couleur  on ajoute 1 au compteur 
                     cpt +=1;
                     
@@ -123,6 +127,79 @@ public class PlateauDeJeu {
             return false;
         }
     }
+    
+    public boolean diagonaleDesencanteGagnantePourCouleur(String Couleur){
+        int a=0;
+        int b;
+        for (int i=0; i<3; i++){
+            for(int j=0; j<4; j++){
+                if(lireCouleurDuJeton(i,j)==Couleur){
+                    a = i+1;
+                    b = j+1;
+                    if(lireCouleurDuJeton(a, b)==Couleur){
+                        a +=1;
+                        b +=1;
+                        if(lireCouleurDuJeton(a,b)==Couleur){
+                            a +=1;
+                            b +=1;
+                            if(lireCouleurDuJeton(a,b)==Couleur){
+                                
+                                a=5;
+                                break;
+                            }
+                        }
+                    }
+                }
+                
+            }
+            if(a==5){
+                    break;
+                }
+        }
+        if(a==5){
+            return true;
+        }else{
+            return false;
+        }
+        
+    }
+    
+    public boolean diagonaleMontanteGagnantePourCouleur(String Couleur){
+        int a=0;
+        int b;
+        for (int i=0; i<3; i++){
+            for(int j=3; j<7; j++){
+                if(lireCouleurDuJeton(i,j)==Couleur){
+                    a = i+1;
+                    b = j-1;
+                    if(lireCouleurDuJeton(a, b)==Couleur){
+                        a +=1;
+                        b -=1;
+                        if(lireCouleurDuJeton(a,b)==Couleur){
+                            a +=1;
+                            b -=1;
+                            if(lireCouleurDuJeton(a,b)==Couleur){
+                                
+                                a=5;
+                                break;
+                            }
+                        }
+                    }
+                }
+                
+            }
+            if(a==5){
+                    break;
+                }
+        }
+        if(a==5){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
+    
     
  }
     
