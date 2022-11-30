@@ -240,6 +240,25 @@ public class PlateauDeJeu {
     public void recupererJeton(int x, int y){//méthode permettant de récuperer un jeton à la x ligne et y colonne 
         grille[x][y].recupererJeton();
     }
+    
+    public void viderGrille(Joueur J1,Joueur J2){ //méthode qui permet de vider la grille
+        String couleur;
+        Jetons jeton;
+        for(int i=0; i<6; i++){//on parcourt la grille à l'aide d'une double boucle
+            for(int j=0; j<7; j++){
+                if (grille[i][j].presenceJeton()==true){//si la grille contient un jeton 
+                    jeton= grille[i][j].recupererJeton();//alors la variable jeton recupère le jeton de la case de la grille 
+                    couleur = lireCouleurDuJeton(i,j);//et on prend la couleur du jeton 
+                    if(J1.getCouleurJ()==couleur){//si la couleur du jeton correspond à la couleur du joueur
+                        J1.ajouterJeton(jeton);//alors on donne le jeton au Joueur associé                    
+                    }else{
+                        J2.ajouterJeton(jeton);
+                    }
+                }
+                
+            }
+        }
+    }
  }
     
     
