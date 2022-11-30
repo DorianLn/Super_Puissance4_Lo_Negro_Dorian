@@ -23,7 +23,7 @@ public class PlateauDeJeu {
     
     public int AjouterJetonDansColonnes(Jetons jeton, int indice){
         
-        for(int i =6; i>0 ; i++){
+        for(int i =6; i>=0 ; i--){
             if(grille[i][indice]==null){
                 grille[i][indice].affecterJeton(jeton);//on ajoute le jeton dans la i ème ligne et la indice colonne 
                 break;       
@@ -129,21 +129,21 @@ public class PlateauDeJeu {
     }
     
     public boolean diagonaleDesencanteGagnantePourCouleur(String Couleur){
-        int a=0;
+        int a=0;//on initialise deux variables a e b 
         int b;
         for (int i=0; i<3; i++){
             for(int j=0; j<4; j++){
-                if(lireCouleurDuJeton(i,j)==Couleur){
-                    a = i+1;
-                    b = j+1;
+                if(lireCouleurDuJeton(i,j)==Couleur){//on parcourt la première ligne jusqu'à la quatrième colonne 
+                    a = i+1;//si la couleur est la bonne
+                    b = j+1;//on avance d'une ligne et d'une colonne
                     if(lireCouleurDuJeton(a, b)==Couleur){
-                        a +=1;
+                        a +=1;//même résonnement
                         b +=1;
                         if(lireCouleurDuJeton(a,b)==Couleur){
-                            a +=1;
+                            a +=1;//idem
                             b +=1;
                             if(lireCouleurDuJeton(a,b)==Couleur){
-                                
+                                //si la couleur est 4 fois la bonne on arrete la boucle
                                 a=5;
                                 break;
                             }
@@ -152,12 +152,12 @@ public class PlateauDeJeu {
                 }
                 
             }
-            if(a==5){
-                    break;
+            if(a==5){//si a =5 alors cela veut dire que l'on a 4 fois la même couleur
+                    break;//on arrete la deuxième boucle
                 }
         }
         if(a==5){
-            return true;
+            return true;//on retourne true si a = 5
         }else{
             return false;
         }
@@ -199,7 +199,23 @@ public class PlateauDeJeu {
         }
     }
     
+    public void tasserLigne(int ColonneIndi){
+        for(int i=5; i>0 ;i--){
+            if(grille[i][ColonneIndi]==null){
+                grille[i][ColonneIndi]=grille[i+1][ColonneIndi];
+                grille[i-1][ColonneIndi]=null;
+                
+            }
+        }   
+    }
     
+    public boolean colonneRemplie(int C){
+        if(grille[0][C]!=null){
+            return true;
+        }else{
+            return false;
+        }
+    }     
     
  }
     
