@@ -210,7 +210,7 @@ public class Partie {
 
                     while (lgn>6){
 
-                        System.out.println("De quelle ligne voulez vous récuprer votre jeton");
+                        System.out.println("De quelle ligne voulez vous récupérer votre jeton");
 
                         lgn = ligne.nextInt();
 
@@ -317,53 +317,28 @@ public class Partie {
                     while (lgn>6){
 
                         System.out.println("De quelle ligne voulez vous récuprer votre jeton");
-
                         lgn = ligne.nextInt();
-
-                    }
-
-                   
-
+                    }                 
                     plateau.recupererJeton(lgn-1, cln-1);
-
                     n +=1;
-
                 }
-
                 if (choix == 3){
-
                     int cln=10;
-
                     int lgn=10;
-
                     if (joueurCourant.getNombreDesintegrateurs()==0){
-
                         System.out.println("Le joueur n'a pas de désintegrateurs");
-
                         continue;
-
                     }
-
                     Scanner colonne = new Scanner (System.in);
-
                     Scanner ligne = new Scanner (System.in);
-
                     while (cln>7){
-
                         System.out.println("Dans quelle colonne voulez vous utiliser votre desintegrateur");
-
                         cln = colonne.nextInt();
-
                     }
-
                     while (lgn>6){
-
                         System.out.println("Dans quelle ligne voulez vous utiliser votre desintegrateur");
-
                         lgn = ligne.nextInt();
-
                     }
-
                     plateau.utiliserDesintegrateur(lgn-1, cln-1,joueurCourant);
 
                     n +=1;
