@@ -14,8 +14,8 @@ public class PlateauDeJeu {
     public PlateauDeJeu(){ //constructeur pour mettre les cellules du plateau à null
             
            for (int i=0; i<6 ; i++){
-               for(int j=0 ; i<7 ; i++){
-                   grille [i][j]=null;
+               for(int j=0 ; j<7 ; j++){
+                   grille [i][j]=  new  CelluleDeGrille();
                }
            }
     }
@@ -23,7 +23,7 @@ public class PlateauDeJeu {
     
     public int AjouterJetonDansColonnes(Jetons jeton, int indice){
         
-        for(int i =6; i>=0 ; i--){
+        for(int i =5; i>=0 ; i--){
             if(grille[i][indice]==null){
                 grille[i][indice].affecterJeton(jeton);//on ajoute le jeton dans la i ème ligne et la indice colonne 
                 break;       
@@ -74,7 +74,7 @@ public class PlateauDeJeu {
         int cpt=0;//on pose un compteur egal à 0
         for(int i=0; i<6; i++){//on effectu une double boucle pour parcourir toutes les colonnes de chaque ligne 
             for(int j=0; j<7; j++){
-                if(lireCouleurDuJeton(i, j )==Couleur){//si la couleur de la case situé à une i ème ligne et j ème colonne est egale à la couleur  on ajoute 1 au compteur 
+                if(lireCouleurDuJeton(i, j ).equals(Couleur)){//si la couleur de la case situé à une i ème ligne et j ème colonne est egale à la couleur  on ajoute 1 au compteur 
                     cpt +=1;
                     
                 }
@@ -103,7 +103,7 @@ public class PlateauDeJeu {
         int cpt=0;//on pose un compteur egal à 0
         for(int i=0; i<7; i++){//on effectu une double boucle pour parcourir toutes les colonnes de chaque ligne 
             for(int j=0; j<6; j++){
-                if(lireCouleurDuJeton(j, i )==Couleur){//si la couleur de la case situé à une i ème colonne et j ème ligne est egale à la couleur  on ajoute 1 au compteur 
+                if(lireCouleurDuJeton(j, i ).equals(Couleur)){//si la couleur de la case situé à une i ème colonne et j ème ligne est egale à la couleur  on ajoute 1 au compteur 
                     cpt +=1;
                     
                 }
@@ -133,16 +133,16 @@ public class PlateauDeJeu {
         int b;
         for (int i=0; i<3; i++){
             for(int j=0; j<4; j++){
-                if(lireCouleurDuJeton(i,j)==Couleur){//on parcourt la première ligne jusqu'à la quatrième colonne 
+                if(lireCouleurDuJeton(i,j).equals(Couleur)){//on parcourt la première ligne jusqu'à la quatrième colonne 
                     a = i+1;//si la couleur est la bonne
                     b = j+1;//on avance d'une ligne et d'une colonne
-                    if(lireCouleurDuJeton(a, b)==Couleur){
+                    if(lireCouleurDuJeton(a, b).equals(Couleur)){
                         a +=1;//même résonnement
                         b +=1;
-                        if(lireCouleurDuJeton(a,b)==Couleur){
+                        if(lireCouleurDuJeton(a,b).equals(Couleur)){
                             a +=1;//idem
                             b +=1;
-                            if(lireCouleurDuJeton(a,b)==Couleur){
+                            if(lireCouleurDuJeton(a,b).equals(Couleur)){
                                 //si la couleur est 4 fois la bonne on arrete la boucle
                                 a=5;
                                 break;
@@ -169,16 +169,16 @@ public class PlateauDeJeu {
         int b;
         for (int i=0; i<3; i++){
             for(int j=3; j<7; j++){
-                if(lireCouleurDuJeton(i,j)==Couleur){
+                if(lireCouleurDuJeton(i,j).equals(Couleur)){
                     a = i+1;
                     b = j-1;
-                    if(lireCouleurDuJeton(a, b)==Couleur){
+                    if(lireCouleurDuJeton(a, b).equals(Couleur)){
                         a +=1;
                         b -=1;
-                        if(lireCouleurDuJeton(a,b)==Couleur){
+                        if(lireCouleurDuJeton(a,b).equals(Couleur)){
                             a +=1;
                             b -=1;
-                            if(lireCouleurDuJeton(a,b)==Couleur){
+                            if(lireCouleurDuJeton(a,b).equals(Couleur)){
                                 
                                 a=5;
                                 break;

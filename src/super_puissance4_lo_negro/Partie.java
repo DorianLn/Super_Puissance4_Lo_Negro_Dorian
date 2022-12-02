@@ -13,9 +13,7 @@ import java.util.Scanner;
 public class Partie {
 
     private Joueur[] listeJoueurs=new Joueur[2];// on créer les attributs demandés
-
     private Joueur joueurCourant;
-
     private PlateauDeJeu plateau;
 
  
@@ -23,11 +21,9 @@ public class Partie {
     
 
     public Partie (Joueur joueur1,Joueur joueur2){ //création du constructeur de Partie 
-
         listeJoueurs[0]=joueur1;//on affecte les deux joueurs  dans le tableau listeJoueurs 
         listeJoueurs[1]=joueur2;
-        plateau=new PlateauDeJeu();//on créer un nouveau plateau
-
+        plateau = new PlateauDeJeu();//on créer un nouveau plateau
     }
 
  
@@ -35,14 +31,8 @@ public class Partie {
     
 
     public Joueur[] getListeJoueurs() {//méthode qui recupère la liste des joueurs 
-
         return listeJoueurs;
-
-    }
-
-   
-
-   
+    }   
 
     public void attribuerCouleurAuxJoueurs(){//méthode qui affecte une couleur aux joueurs aléatoirement 
 
@@ -50,17 +40,11 @@ public class Partie {
         if (valeur==0){
             listeJoueurs[0].affecterCouleur("rouge");//on affecte la couleur aux jouers avec la méthode affecter joueur
             listeJoueurs[1].affecterCouleur("jaune");
-
         }
-
         else{
             listeJoueurs[0].affecterCouleur("jaune");
             listeJoueurs[1].affecterCouleur("rouge");
-
         }
-
-       
-
     }
 
  
@@ -155,19 +139,12 @@ public class Partie {
     public void lancerPartie(){//méthode qui lance une partie 
 
         int n=0;
-
         joueurCourant = listeJoueurs[0];
-
         while(plateau.GagnantePourCouleur(joueurCourant.getCouleurJ()) == false){
-
             if (n%2 == 0){
-
                 joueurCourant = listeJoueurs[0];
-
-                System.out.println("Si vous voulez jouer un jeton tapez '1', si vous voulez récupérer un jeton, tapez '2' et si vous voulez utiliser un désintegrateur, tapez'3'");
-
+                System.out.println("JOUEUR 1 : Si vous voulez jouer un jeton tapez '1', si vous voulez récupérer un jeton, tapez '2' et si vous voulez utiliser un désintegrateur, tapez'3'");
                 Scanner reponse = new Scanner (System.in);
-
                 int choix = reponse.nextInt();
 
                 if (choix == 1){
@@ -183,41 +160,23 @@ public class Partie {
                         cln = colonne.nextInt();
 
                     }
-
                     plateau.AjouterJetonDansColonnes(joueurCourant.jouerJeton(), cln-1);
-
                     n +=1;
-
                 }
-
                 if (choix == 2){
-
                     int cln=10;
-
                     int lgn=10;
-
                     Scanner colonne = new Scanner (System.in);
-
                     Scanner ligne = new Scanner (System.in);
-
+                    
                     while (cln>7){
-
                         System.out.println("De quelle colonne voulez vous récupérer votre jeton");
-
                         cln = colonne.nextInt();
-
                     }
-
                     while (lgn>6){
-
                         System.out.println("De quelle ligne voulez vous récupérer votre jeton");
-
                         lgn = ligne.nextInt();
-
-                    }
-
-                   
-
+                    }                   
                     plateau.recupererJeton(lgn-1, cln-1);
 
                     n +=1;
@@ -249,71 +208,38 @@ public class Partie {
                         cln = colonne.nextInt();
 
                     }
-
                     while (lgn>6){
-
                         System.out.println("Dans quelle ligne voulez vous placer votre jeton");
-
                         lgn = ligne.nextInt();
-
                     }
-
                     plateau.utiliserDesintegrateur(lgn-1, cln-1,joueurCourant);
-
                     n +=1;
-
                 }              
-
             }
-
             if (n%2 == 1){
-
                 joueurCourant = listeJoueurs[1];
-
-                System.out.println("Que voulez vous faire, si vous voulez jouer un jeton tapez '1', si vous voulez récupérer un jeton, tapez '2' et si vous voulez utiliser un désintegrateur, tapez'3'");
-
+                System.out.println("jOUEUR 2 :Que voulez vous faire, si vous voulez jouer un jeton tapez '1', si vous voulez récupérer un jeton, tapez '2' et si vous voulez utiliser un désintegrateur, tapez'3'");
                 Scanner reponse = new Scanner (System.in);
-
                 int choix = reponse.nextInt();
-
                 if (choix == 1){
-
                     int cln=10;
-
                     Scanner colonne = new Scanner (System.in);
-
                     while (cln>7){
-
                         System.out.println("Dans quelle colonne voulez vous placer votre jeton");
-
                         cln = colonne.nextInt();
-
                     }
-
-                    plateau.AjouterJetonDansColonnes(joueurCourant.jouerJeton(), cln-1);
-
+                    plateau.AjouterJetonDansColonnes(joueurCourant.jouerJeton(), cln-1);                  
                     n +=1;
-
                 }
-
                 if (choix == 2){
-
                     int cln=10;
-
                     int lgn=10;
-
                     Scanner colonne = new Scanner (System.in);
-
                     Scanner ligne = new Scanner (System.in);
-
                     while (cln>7){
-
                         System.out.println("De quelle colonne voulez vous récupérer votre jeton");
-
                         cln = colonne.nextInt();
-
                     }
-
                     while (lgn>6){
 
                         System.out.println("De quelle ligne voulez vous récuprer votre jeton");
@@ -340,7 +266,6 @@ public class Partie {
                         lgn = ligne.nextInt();
                     }
                     plateau.utiliserDesintegrateur(lgn-1, cln-1,joueurCourant);
-
                     n +=1;
 
                 }              
@@ -352,9 +277,6 @@ public class Partie {
         }
 
     }
-
- 
-
 }
 
 

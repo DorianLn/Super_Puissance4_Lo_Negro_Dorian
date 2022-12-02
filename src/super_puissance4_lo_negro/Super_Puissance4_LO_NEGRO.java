@@ -21,9 +21,15 @@ public class Super_Puissance4_LO_NEGRO {
         
         Jetons jeton2 = new Jetons("Rouge");
         System.out.println(jeton2);
-        
         jeton2.getCouleur();
-        
+        String Joueurun = "A";
+        String Joueurdeux = "B";
+        jeton2.getCouleur();
+        Joueur J1 =new Joueur(Joueurun, 0);
+        Joueur J2 = new Joueur(Joueurdeux, 0);
+        Partie P1 = new Partie(J1, J2);
+        P1.initialiserPartie();
+        P1.lancerPartie();
         
     }
     

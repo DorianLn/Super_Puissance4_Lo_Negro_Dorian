@@ -22,8 +22,8 @@ public class Joueur {
         nombreDesintegrateurs = 0;
     }
     
-    public void affecterCouleur (String Joueur) {   //Méthode qui affecte à un joueur une couleur soit rouge soit jaune
-        Joueur = couleur;
+    public void affecterCouleur (String col) {   //Méthode qui affecte à un joueur une couleur soit rouge soit jaune
+        couleur= col;
     }
     
     public int nombreDeJetons() {   //Méthode permettant d'obtenir le nombre de jeton disponible dans la réserve d'un joueur

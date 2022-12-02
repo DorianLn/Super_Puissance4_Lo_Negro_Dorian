@@ -14,7 +14,7 @@ public class CelluleDeGrille {
     private boolean AvoirTrouNoir ;
     private boolean avoirDesintegrateur ;
 
-    public CelluleDeGrille(Jetons jetonCourant, boolean AvoirTrouNoir, boolean avoirDesintegrateur) {   //création d'un constructeur 
+    public CelluleDeGrille() {   //création d'un constructeur 
         this.jetonCourant = null;// initialement les cases du jeu ne comportent rien
         this.AvoirTrouNoir = false;
         this.avoirDesintegrateur = false;
