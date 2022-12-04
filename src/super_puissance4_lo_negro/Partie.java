@@ -130,7 +130,8 @@ public class Partie {
         attribuerCouleurAuxJoueurs();
         creerEtAffecterJeton(listeJoueurs[1]);
         creerEtAffecterJeton(listeJoueurs[0]);
-        
+        placerTrousNoirsEtDesintegrateurs();
+        plateau.afficherGrilleSurConsole();
         
     }
 
@@ -141,7 +142,7 @@ public class Partie {
         
         int n=0;
         joueurCourant = listeJoueurs[0];
-        plateau.afficherGrilleSurConsole();
+        
         while(plateau.GagnantePourCouleur(joueurCourant.getCouleurJ()) == false){
             
             
