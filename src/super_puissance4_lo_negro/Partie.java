@@ -126,21 +126,25 @@ public class Partie {
    
 
     public void initialiserPartie(){//méthode qui initialise une partie 
-
+        
         attribuerCouleurAuxJoueurs();
         creerEtAffecterJeton(listeJoueurs[1]);
         creerEtAffecterJeton(listeJoueurs[0]);
-        placerTrousNoirsEtDesintegrateurs();
-
+        
+        
     }
 
    
 
     public void lancerPartie(){//méthode qui lance une partie 
-
+        
+        
         int n=0;
         joueurCourant = listeJoueurs[0];
+        plateau.afficherGrilleSurConsole();
         while(plateau.GagnantePourCouleur(joueurCourant.getCouleurJ()) == false){
+            
+            
             if (n%2 == 0){
                 joueurCourant = listeJoueurs[0];
                 System.out.println("JOUEUR 1 : Si vous voulez jouer un jeton tapez '1', si vous voulez récupérer un jeton, tapez '2' et si vous voulez utiliser un désintegrateur, tapez'3'");

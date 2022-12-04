@@ -4,6 +4,8 @@
  */
 package super_puissance4_lo_negro;
 
+import java.util.Arrays;
+
 /**
  *
  * @author doria
@@ -53,7 +55,12 @@ public class PlateauDeJeu {
     
     
     public void afficherGrilleSurConsole(){//méthode permettant d'afficher la grille
-        grille.toString();
+        for(int i=0; i<6;i++){
+            for (int j=0;j<7;j++){
+                grille[i][j].toString();
+            }
+        }
+        
         
         
     }

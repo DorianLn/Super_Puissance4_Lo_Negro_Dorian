@@ -30,6 +30,7 @@ public class CelluleDeGrille {
 
     public void affecterJeton(Jetons jetonCourant) {     // méthode permettant de ajouter le jeton en paramètre à la cellule
         this.jetonCourant = jetonCourant;
+       
     }
     
     
@@ -97,6 +98,7 @@ public class CelluleDeGrille {
 
     @Override
     public String toString() {
+        
         if(presenceJeton()==true){
             return jetonCourant.getCouleur();
         }

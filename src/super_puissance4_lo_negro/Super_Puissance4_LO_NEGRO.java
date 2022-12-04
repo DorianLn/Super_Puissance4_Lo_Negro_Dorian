@@ -29,7 +29,9 @@ public class Super_Puissance4_LO_NEGRO {
         Joueur J2 = new Joueur(Joueurdeux, 0);
         Partie P1 = new Partie(J1, J2);
         P1.initialiserPartie();
+        System.out.println(P1);
         P1.lancerPartie();
+        
         
     }
     
